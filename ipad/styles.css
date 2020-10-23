@@ -1,0 +1,85 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background: #000000;
+}
+
+#deck {
+  width: 1080px;
+  margin: auto;
+  display:flex;
+  flex-direction: column;
+}
+
+.memory-game {
+  width:100%;
+  display: flex;
+  justify-content:center;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.bottons {
+  width: 80px;
+  height: 10px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1px;
+}
+
+.memory-card {
+  width: 100px;
+  height: 150px;
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+  -ms-transform:rotateY(180deg); /* Internet Explorer */
+  -moz-transform:rotateY(180deg); /* Firefox */
+  -webkit-transform:rotateY(180deg); /* Safari ºÍ Chrome */
+  -o-transform:rotateY(180deg); /* Opera */
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 1px;
+  position: absolute;
+  border-radius: 1px;
+  background: #1C7CCC;
+  backface-visibility: hidden;
+}
+
+.back-face {
+  transform: rotateY(180deg);
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
